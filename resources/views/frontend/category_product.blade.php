@@ -162,6 +162,21 @@
                                 </div>
                                 <div class="product-card__buttons">
                                     @if (Session::has('user_id'))
+
+                                        <?php
+
+                                        if (Session::get('user_id')) {
+                                            $id = Session::get('user_id');
+
+                                            $auth_user = \App\Models\User::where('id', $id)->first();
+                                        }
+
+                                        ?>
+
+                                        @if($auth_user->email_verified_at == null)
+                                            <a href="{{route('auth.user.email.verify')}}" class="btn btn-primary btn-lg"> Add to Cart </a>
+
+                                        @else
                                         <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <input type="hidden" value="{{ $category_product->id }}" name="id">
@@ -171,6 +186,7 @@
                                             <input type="hidden" value="1" name="quantity">
                                             <button class="btn btn-primary btn-lg">Add To Cart</button>
                                         </form>
+                                            @endif
                                     @else
                                         <a href="{{route('auth.user.login')}}" class="btn btn-primary btn-lg">Add to cart</a>
                                     @endif

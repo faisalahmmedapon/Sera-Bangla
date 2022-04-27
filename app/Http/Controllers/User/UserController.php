@@ -131,7 +131,18 @@ class UserController extends Controller
         );
         return redirect()->back()->with($notification);
 
+    }
 
+    public function verifyed(){
+
+        if (Session::get('user_id')) {
+            $id = Session::get('user_id');
+
+            $auth_user = User::where('id', $id)->first();
+            $auth_user->email_verified_at = '1';
+            $auth_user->save();
+            return redirect('/auth/user/dashboard');
+        }
     }
 
 

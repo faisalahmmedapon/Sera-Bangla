@@ -24,13 +24,15 @@
                             </button>
                             <div class="topbar-dropdown__body"><!-- .menu -->
                                 <ul class="menu menu--layout--topbar">
-                                    <li><a href="{{route('auth.user.login.page')}}">Login</a></li>
-                                    <li><a href="{{route('auth.user.register.page')}}">Register</a></li>
+
                                     @if (Session::has('user_id'))
                                         <li><a href="{{route('auth.user.dashboard')}}">Dashboard</a></li>
+                                        <li><a href="{{route('auth.user.orders')}}">Orders</a></li>
+                                    @else
+                                        <li><a href="{{route('auth.user.login.page')}}">Login</a></li>
+                                        <li><a href="{{route('auth.user.register.page')}}">Register</a></li>
                                     @endif
-                                    <li><a href="#">Orders</a></li>
-                                    <li><a href="#">Addresses</a></li>
+
                                 </ul><!-- .menu / end --></div>
                         </div>
                     </div>

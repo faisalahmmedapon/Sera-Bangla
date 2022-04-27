@@ -37,9 +37,8 @@ class sendEmailJob implements ShouldQueue
 
         if (Session::get('user_id')) {
             $id = Session::get('user_id');
-
-            $auth_user = User::where('id', $id)->first();
-            Mail::to($auth_user->email)->send(new sendEmailMailable($auth_user));
+            $user = User::where('id', $id)->first();
+            Mail::to($user->email)->send(new sendEmailMailable());
         }
 
     }

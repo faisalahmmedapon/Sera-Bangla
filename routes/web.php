@@ -166,6 +166,7 @@ Route::namespace('User')->prefix('/auth/user/')->group(function () {
     Route::post('login',[UserController::class,'login'])->name('auth.user.login');
     Route::get('email-verify',[UserController::class,'authUserEmailVerify'])->name('auth.user.email.verify');
     Route::post('email-verification-send',[UserController::class,'authUserEmailVerificationSend'])->name('email.verification.send');
+    Route::post('verifyed',[UserController::class,'verifyed'])->name('email.verification.verifyed');
     Route::get('logout', [UserController::class,'logout'])->name('auth.user.logout');
     // after admin login
     Route::get('dashboard',[UserController::class,'dashboard'])->name('auth.user.dashboard');
