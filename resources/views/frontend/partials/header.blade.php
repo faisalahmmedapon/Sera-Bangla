@@ -3,14 +3,14 @@
         <div class="site-header__topbar topbar">
             <div class="topbar__container container">
                 <div class="topbar__row">
-                    <div class="topbar__item topbar__item--link"><a class="topbar-link" href="about-us.html">About
+                    <div class="topbar__item topbar__item--link"><a class="topbar-link" href="{{route('aboutus')}}">About
                             Us</a></div>
                     <div class="topbar__item topbar__item--link"><a class="topbar-link"
-                                                                    href="contact-us.html">Contacts</a></div>
+                                                                    href="{{route('contacts')}}">Contacts</a></div>
 
-                    <div class="topbar__item topbar__item--link"><a class="topbar-link" href="track-order.html">Track
+                    <div class="topbar__item topbar__item--link"><a class="topbar-link" href="#">Track
                             Order</a></div>
-                    <div class="topbar__item topbar__item--link"><a class="topbar-link"
+                    <div class="topbar__item topbar__item--link"><a class="#"
                                                                     href="blog-classic.html">Blog</a></div>
                     <div class="topbar__spring"></div>
                     <div class="topbar__item">
@@ -69,23 +69,11 @@
                                             <div class="menu__icon"><img
                                                     srcset="images/languages/language-2.png, images/languages/language-2@2x.png 2x"
                                                     src="images/languages/language-2.png" alt=""></div>
-                                            French</a></li>
-                                    <li><a href="#">
-                                            <div class="menu__icon"><img
-                                                    srcset="images/languages/language-3.png, images/languages/language-3@2x.png 2x"
-                                                    src="images/languages/language-3.png" alt=""></div>
-                                            German</a></li>
-                                    <li><a href="#">
-                                            <div class="menu__icon"><img
-                                                    srcset="images/languages/language-4.png, images/languages/language-4@2x.png 2x"
-                                                    src="images/languages/language-4.png" alt=""></div>
-                                            Russian</a></li>
-                                    <li><a href="#">
-                                            <div class="menu__icon"><img
-                                                    srcset="images/languages/language-5.png, images/languages/language-5@2x.png 2x"
-                                                    src="images/languages/language-5.png" alt=""></div>
-                                            Italian</a></li>
-                                </ul><!-- .menu / end --></div>
+                                            Bangla</a></li>
+
+                                </ul>
+                                <!-- .menu / end -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -149,7 +137,9 @@
                             <ul class="nav-links__list">
 
                                 <li class="nav-links__item"><a href="{{url('/')}}"><span>Home</span></a></li>
-                                <li class="nav-links__item"><a href=""><span>Contact Us</span></a></li>
+                                <li class="nav-links__item"><a href="{{route('contacts')}}"><span>Contact Us</span></a></li>
+                                <li class="nav-links__item"><a href="{{route('aboutus')}}"><span>About Us</span></a></li>
+                                <li class="nav-links__item"><a href="{{route('support')}}"><span> Support  </span></a></li>
                                 </li>
                             </ul>
                         </div><!-- .nav-links / end -->

@@ -684,8 +684,8 @@
                     <div class="col-md-4">
 
                         <?php
-                        $product_images = json_decode($product->product_image);
-                        $product_images_one = $product_images[0];
+                        $brand_product_images = json_decode($brand_product->product_image);
+                        $brand_product_images_one = $brand_product_images[0];
                         //dd($product_images_one)
                         ?>
                         <div class="product-card  p-3">
@@ -699,11 +699,11 @@
                                 <div class="product-card__badge product-card__badge--new">New</div>
                             </div>
                             <div class="product-card__image"><a
-                                    href="{{route('frontend.product.details',$product->product_name_slug)}}"><img
-                                        src="{{asset($product_images_one)}}" alt=""></a></div>
+                                    href="{{route('frontend.product.details',$brand_product->product_name_slug)}}"><img
+                                        src="{{asset($brand_product_images_one)}}" alt=""></a></div>
                             <div class="product-card__info">
                                 <div class="product-card__name"><a
-                                        href="{{route('frontend.product.details',$product->product_name_slug)}}"> {{Str::limit($product->product_name,70)}}</a>
+                                        href="{{route('frontend.product.details',$brand_product->product_name_slug)}}"> {{Str::limit($brand_product->product_name,70)}}</a>
                                 </div>
                                 <div class="product-card__rating">
                                     <div class="rating">

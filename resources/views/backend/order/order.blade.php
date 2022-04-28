@@ -45,7 +45,7 @@
                             <tr>
                                 <th>{{$key+1}}</th>
                                 <td>{{$order->name}}</td>
-                                <td>${{$order->product_total_price}}</td>
+                                <td> ৳{{$order->product_total_price}}</td>
                                 <td>{{$order->product_quantity}}</td>
                                 <td>
                                     <a href="{{route('order.details',$order->id)}}" class="btn"> <i class="fa fa-eye"> </i> </a>

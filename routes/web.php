@@ -203,6 +203,14 @@ Route::namespace('Frontend')->group(function () {
     Route::get('/auth/user/profile/edit',[AuthUserProfileController::class,'authUserProfileEdit'])->name('auth.user.profile.edit');
     Route::post('/auth/user/profile/update/{id}',[AuthUserProfileController::class,'authUserProfileUpdate'])->name('auth.user.profile.update');
 
+    // pages
+    Route::get('/privacy-policy',[FrontendController::class,'PrivacyPolicy'])->name('frontend.policy');
+    Route::get('/terms-conditions',[FrontendController::class,'TermsConditions'])->name('frontend.terms');
+    Route::get('/delivery-conditions',[FrontendController::class,'DeliveryConditions'])->name('frontend.delivery');
+    Route::get('/returns-policy',[FrontendController::class,'ReturnsPolicy'])->name('frontend.returns');
+    Route::get('/about-us',[FrontendController::class,'AboutUs'])->name('aboutus');
+    Route::get('/contact-us',[FrontendController::class,'ContactUs'])->name('contacts');
+    Route::get('/support',[FrontendController::class,'support'])->name('support');
 
 });
 

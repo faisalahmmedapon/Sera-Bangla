@@ -63,10 +63,37 @@ class FrontendController extends Controller
             ->where('product_category_id',$data['category']->id)
             ->join('products','products.id','product_categories.product_id')
             ->select('products.*')
-            ->orderBy('id','desc')->paginate(1);
+            ->orderBy('id','desc')->paginate(12);
 
 
         return view('frontend.category_product',$data);
 
     }
+
+
+
+    public function PrivacyPolicy(){
+        return view('frontend.policy');
+    }
+    public function TermsConditions(){
+        return view('frontend.terms');
+    }
+    public function DeliveryConditions(){
+        return view('frontend.delivery');
+    }
+    public function ReturnsPolicy(){
+        return view('frontend.returns');
+    }
+
+    public function AboutUs(){
+        return view('frontend.about');
+    }
+    public function ContactUs(){
+        return view('frontend.contact');
+    }
+    public function support(){
+        return view('frontend.support');
+    }
+
+
 }

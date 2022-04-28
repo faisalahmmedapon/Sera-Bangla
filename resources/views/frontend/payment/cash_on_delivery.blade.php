@@ -105,22 +105,21 @@
                                                value="{{$user_product_shipping_address->phone_number}}">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="zella"> Zella </label>
+                                        <label for="zella"> Zila </label>
                                         <input name="zella" type="text" class="form-control" id="zella"
-                                               placeholder="zella"
+                                               placeholder="zila"
                                                value="{{$user_product_shipping_address->zella}}">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="upozella"> UpoZella </label>
+                                        <label for="upozella"> Upazila </label>
                                         <input name="upozella" type="text" class="form-control" id="upozella"
-                                               placeholder="upozella"
+                                               placeholder="Upazila"
                                                value="{{$user_product_shipping_address->upozela}}">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="picup_point"> Picup Point </label>
-                                        <input name="picup_point" type="text" class="form-control"
+                                        <label for="picup_point"> Pickup Point </label>
+                                        <input name="picup_point" type="text" class="form-control" placeholder="Pickup Point"
                                                id="picup_point"
-                                               placeholder="picup_point"
                                                value="{{$user_product_shipping_address->picup_point}}">
                                     </div>
                                 </div>
@@ -147,20 +146,20 @@
                                                placeholder="phone number">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="zella"> Zella </label>
+                                        <label for="zella"> Zila </label>
                                         <input name="zella" type="text" class="form-control" id="zella"
-                                               placeholder="zella">
+                                               placeholder="Zila">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="upozella"> UpoZella </label>
+                                        <label for="upozella"> Upazila </label>
                                         <input name="upozella" type="text" class="form-control" id="upozella"
-                                               placeholder="upozella">
+                                               placeholder="Upazila">
                                     </div>
                                     <div class="form-group col-md-12">
-                                        <label for="picup_point"> Picup Point </label>
+                                        <label for="picup_point"> Pickup Point </label>
                                         <input name="picup_point" type="text" class="form-control"
                                                id="picup_point"
-                                               placeholder="picup_point">
+                                               placeholder="Pickup Point">
                                     </div>
                                 </div>
                             @endif

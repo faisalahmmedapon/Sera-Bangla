@@ -59,7 +59,7 @@
 
                         <tr>
                             <th> Product Selling Price</th>
-                            <td> {{$product->product_selling_price}} </td>
+                            <td>  ৳{{$product->product_selling_price}} </td>
                         </tr>
 
                         <tr>
@@ -69,25 +69,15 @@
 
                         <tr>
                             <th> Product Discount</th>
-                            <td> {{$product->product_discount}} </td>
+                            <td>  ৳{{$product->product_discount}} </td>
                         </tr>
 
 
                         <tr>
                             <th> Product Discount Price</th>
-                            <td> {{$product->product_discount_price}} </td>
+                            <td>  ৳{{$product->product_discount_price}} </td>
                         </tr>
 
-
-                        <tr>
-                            <th> Product Discount Price</th>
-                            <td> {{$product->product_discount_price}} </td>
-                        </tr>
-
-                        <tr>
-                            <th> Product Discount Price</th>
-                            <td> {{$product->product_discount_price}} </td>
-                        </tr>
 
                         <tr>
                             <th> Product Brand</th>

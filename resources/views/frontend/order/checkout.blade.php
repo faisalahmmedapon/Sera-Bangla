@@ -63,13 +63,13 @@
                                                     Cash On Delivery
                                                 </label>
                                             </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="payment_method"
-                                                       id="paypal1" value="paypal">
-                                                <label class="form-check-label" for="paypal1">
-                                                    Paypal
-                                                </label>
-                                            </div>
+{{--                                            <div class="form-check">--}}
+{{--                                                <input class="form-check-input" type="radio" name="payment_method"--}}
+{{--                                                       id="paypal1" value="paypal">--}}
+{{--                                                <label class="form-check-label" for="paypal1">--}}
+{{--                                                    Paypal--}}
+{{--                                                </label>--}}
+{{--                                            </div>--}}
 
                                             <div class="form-check">
                                                 <input class="form-check-input" type="radio" name="payment_method"
@@ -79,13 +79,13 @@
                                                 </label>
                                             </div>
 
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="payment_method"
-                                                       id="wish1" value="wish">
-                                                <label class="form-check-label" for="wish1">
-                                                    Wish
-                                                </label>
-                                            </div>
+{{--                                            <div class="form-check">--}}
+{{--                                                <input class="form-check-input" type="radio" name="payment_method"--}}
+{{--                                                       id="wish1" value="wish">--}}
+{{--                                                <label class="form-check-label" for="wish1">--}}
+{{--                                                    Wish--}}
+{{--                                                </label>--}}
+{{--                                            </div>--}}
 
                                         </ul>
                                     </div>

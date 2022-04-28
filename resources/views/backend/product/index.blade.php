@@ -45,7 +45,7 @@
                             <td>{{$products->product_name}}</td>
                             <td>{{$products->product_quantity}}</td>
                             <td>{{$products->product_sku}}</td>
-                            <td>{{$products->product_discount_price}}</td>
+                            <td> ৳{{$products->product_discount_price}}</td>
                             <td>
                                 <a href="{{route('product.details',$products->id)}}" class="btn"> <i class="fa fa-eye"> </i> </a>
                             @if($products->status == 1)

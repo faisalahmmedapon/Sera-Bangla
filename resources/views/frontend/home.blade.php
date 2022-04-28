@@ -151,7 +151,7 @@
                                         </form>
                                         {{--                                        <a href="{{route('auth.user.login')}}" class="btn btn-danger btn-lg">Add to cart</a>--}}
                                     @else
-                                        <a href="{{route('auth.user.login')}}" class="btn btn-primary btn-lg">Add to
+                                        <a href="{{route('auth.user.login')}}" class="btn btn-primary btn-sm">Add to
                                             Bag</a>
                                     @endif
 

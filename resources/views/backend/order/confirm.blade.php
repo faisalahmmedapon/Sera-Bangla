@@ -46,7 +46,7 @@
                             <tr>
                                 <th>{{$key+1}}</th>
                                 <td>{{$order->name}}</td>
-                                <td>${{$order->product_total_price}}</td>
+                                <td> ৳{{$order->product_total_price}}</td>
                                 <td>{{$order->product_quantity}}</td>
                                 <td>{{$order->status}}</td>
                                 <td>

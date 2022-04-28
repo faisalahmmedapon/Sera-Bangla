@@ -60,23 +60,36 @@
 
                         <tr>
                             <th> Product Selling Price</th>
-                            <td> ${{$product->product_selling_price}} </td>
+                            <td>  ৳{{$product->product_selling_price}} </td>
                         </tr>
 
                         <tr>
                             <th> Product Discount Type</th>
-                            <td> {{$product->product_discount_type}} </td>
+                            <td>
+                                @if($product->product_discount_type == 1)
+                                    Amount
+                                @else
+                                    Percentage
+                                @endif
                         </tr>
 
                         <tr>
                             <th> Product Discount</th>
-                            <td> ${{$product->product_discount}} </td>
+
+
+                            <td>
+
+                                @if($product->product_discount_type == 1)
+                                    ৳{{$product->product_discount}}
+                                @else
+                                    {{$product->product_discount}}%
+                                @endif
                         </tr>
 
 
                         <tr>
                             <th> Product Discount Price</th>
-                            <td> ${{$product->product_discount_price}} </td>
+                            <td>  ৳{{$product->product_discount_price}} </td>
                         </tr>
 
 
@@ -168,13 +181,13 @@
 
                         <tr>
                             <th> Order Product Price</th>
-                            <td> ${{$order->product_price}} </td>
+                            <td>  ৳{{$order->product_price}} </td>
                         </tr>
 
 
                         <tr>
                             <th> Order Product Total Price</th>
-                            <td> ${{$order->product_total_price}} </td>
+                            <td>  ৳{{$order->product_total_price}} </td>
                         </tr>
 
                         <tr>
@@ -215,12 +228,12 @@
                         </tr>
 
                         <tr>
-                            <th>Zela</th>
+                            <th>Zila</th>
                             <td> {{$product_shipping_address->zella}} </td>
                         </tr>
 
                         <tr>
-                            <th>Upozela</th>
+                            <th> Upazila</th>
                             <td> {{$product_shipping_address->upozela}} </td>
                         </tr>
 
