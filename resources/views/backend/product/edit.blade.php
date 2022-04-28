@@ -214,7 +214,7 @@
                     </div>
 
                 </div>
-                <button type="submit"> SUBMIT </button>
+                <button type="submit" class="btn-success"> SUBMIT </button>
             </form>
 
         </div>

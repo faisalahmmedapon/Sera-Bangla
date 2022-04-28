@@ -27,7 +27,7 @@
                                                 <td> {{$cartItem->name}} × <a
                                                         class="btn btn-primary btn-sm text-white">{{$cartItem->quantity}}</a>
                                                 </td>
-                                                <td>$ {{$cartItem->price*$cartItem->quantity}}</td>
+                                                <td> ৳ {{$cartItem->price*$cartItem->quantity}}</td>
                                             </tr>
                                         @endforeach
 
@@ -35,21 +35,21 @@
                                         <tbody class="checkout__totals-subtotals">
                                         <tr>
                                             <th>Subtotal</th>
-                                            <td>${{\Cart::getSubTotal('0')}}</td>
+                                            <td>৳{{\Cart::getSubTotal('0')}}</td>
                                         </tr>
                                         <tr>
                                             <th>Store Credit</th>
-                                            <td>$20.00</td>
+                                            <td>৳20.00</td>
                                         </tr>
                                         <tr>
                                             <th>Shipping</th>
-                                            <td>$25.00x{{$cartItem->quantity}}</td>
+                                            <td>৳25.00x{{$cartItem->quantity}}</td>
                                         </tr>
                                         </tbody>
                                         <tfoot class="checkout__totals-footer">
                                         <tr>
                                             <th>Total</th>
-                                            <td> ${{\Cart::getSubTotal('0')+$cartItem->quantity*25}} </td>
+                                            <td> ৳{{\Cart::getSubTotal('0')+$cartItem->quantity*25}} </td>
                                         </tr>
                                         </tfoot>
                                     </table>

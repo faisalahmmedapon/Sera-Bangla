@@ -19,9 +19,14 @@
                         <h3 class="card-title">Login</h3>
                         <form action="{{route('auth.user.login')}}" method="POST">
                             @csrf
-                            <div class="form-group"><label>Email address</label>
-                                <input name="email" type="email" value="{{old('email')}}" class="form-control" placeholder="Enter email">
-                                <div style='color:red; padding: 0 5px;'>{{($errors->has('email'))?($errors->first('email')):''}}</div>
+{{--                            <div class="form-group"><label>Email address</label>--}}
+{{--                                <input name="email" type="email" value="{{old('email')}}" class="form-control" placeholder="Enter email">--}}
+{{--                                <div style='color:red; padding: 0 5px;'>{{($errors->has('email'))?($errors->first('email')):''}}</div>--}}
+
+{{--                            </div>--}}
+                            <div class="form-group"><label> Phone</label>
+                                <input name="phone" type="number" value="+88013" class="form-control" placeholder="Enter Your Login Phone Number">
+                                <div style='color:red; padding: 0 5px;'>{{($errors->has('phone'))?($errors->first('phone')):''}}</div>
 
                             </div>
                             <div class="form-group"><label>Password</label>

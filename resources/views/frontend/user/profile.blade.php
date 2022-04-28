@@ -23,12 +23,25 @@
 
                     <tr>
                         <td>Email:</td>
-                        <td>{{$auth_user->email}}</td>
+                        <td>{{$auth_user->email}}
+                            @if($auth_user->email_verified_at != null)
+                                  <p class=" bg-success text-white p-1">   Email Verified</p>
+                            @else
+                                <p class=" bg-danger text-white p-1">   Email Not Verified</p>
+                            @endif
+                        </td>
                     </tr>
 
                     <tr>
                         <td>Phone:</td>
-                        <td>{{$auth_user->phone}}</td>
+                        <td>{{$auth_user->phone}}
+                            @if($auth_user->phone_verified_at != null)
+                                <p class=" bg-success text-white p-1">   Phone Verified</p>
+                            @else
+                                <p class=" bg-danger text-white p-1">   Phone Not Verified</p>
+                            @endif
+
+                        </td>
                     </tr>
 
                     <tr>

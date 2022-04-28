@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 
 use DB;
 use Hash;
+use Intervention\Image\Facades\Image;
 use Session;
 use Validator;
 use Str;
@@ -86,10 +87,12 @@ class ProductController extends Controller
             {
                 foreach($request->file('product_image') as $image)
                 {
-                    $name = "product_".time() . '_' . uniqid() . '.' .$image->getClientOriginalExtension();
-                    $image->move(public_path('uploads/product/'), $name);
-//                $image->move(public_path().'uploads/images/', $name);
-                    $data[] = 'uploads/product/'.$name;
+                    $product_image = $image;
+                    $extension = $product_image->getClientOriginalExtension();
+                    $product_name = "product_" . time() . "." . $extension;
+                    Image::make($product_image)->resize(1920, 1500)->save(public_path().'/uploads/product/'.$product_name);
+//                    $image->move(public_path('uploads/product/'), $product_name);
+                    $data[] = 'uploads/product/'.$product_name;
                 }
             }
             $product->product_image = json_encode($data);
@@ -234,10 +237,13 @@ class ProductController extends Controller
 
             foreach($request->file('product_image') as $image)
             {
-                $name = "product_".time() . '_' . uniqid() . '.' .$image->getClientOriginalExtension();
-                $image->move(public_path('uploads/product/'), $name);
-//                $image->move(public_path().'uploads/images/', $name);
-                $data[] = 'uploads/product/'.$name;
+                $product_image = $image;
+                $extension = $product_image->getClientOriginalExtension();
+                $product_name = "product_" . time() . "." . $extension;
+                Image::make($product_image)->resize(1920, 1500)->save(public_path().'/uploads/product/'.$product_name);
+//                    $image->move(public_path('uploads/product/'), $product_name);
+
+                $data[] = 'uploads/product/'.$product_name;
             }
             $product->product_image = json_encode($data);
         }

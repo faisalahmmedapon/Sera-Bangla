@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\MaterialController;
 use App\Http\Controllers\Backend\BackendOrderController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SizeController;
+use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Cart\CartController;
 use App\Http\Controllers\Cart\CartOrderController;
 use App\Http\Controllers\Frontend\AuthUserProfileController;
@@ -66,6 +67,15 @@ Route::namespace('Backend')->prefix('/')->middleware('auth.admin.login.check')->
     Route::post('category/update/{id}',[CategoryController::class,'update'])->name('category.update');
     Route::get('category/status/{id}',[CategoryController::class,'status'])->name('category.status');
     Route::get('category/delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
+
+
+    Route::get('sliders',[SliderController::class,'index'])->name('slider.index');
+    Route::get('slider/create',[SliderController::class,'create'])->name('slider.create');
+    Route::post('slider/store',[SliderController::class,'store'])->name('slider.store');
+    Route::get('slider/edit/{id}',[SliderController::class,'edit'])->name('slider.edit');
+    Route::post('slider/update/{id}',[SliderController::class,'update'])->name('slider.update');
+    Route::get('slider/status/{id}',[SliderController::class,'status'])->name('slider.status');
+    Route::get('slider/delete/{id}',[SliderController::class,'delete'])->name('slider.delete');
 
 
     Route::get('colors',[ColorController::class,'index'])->name('color.index');
@@ -167,6 +177,11 @@ Route::namespace('User')->prefix('/auth/user/')->group(function () {
     Route::get('email-verify',[UserController::class,'authUserEmailVerify'])->name('auth.user.email.verify');
     Route::post('email-verification-send',[UserController::class,'authUserEmailVerificationSend'])->name('email.verification.send');
     Route::post('verifyed',[UserController::class,'verifyed'])->name('email.verification.verifyed');
+
+    // phone verify
+    Route::get('phone-verify',[UserController::class,'phoneVerify'])->name('phone.verify');
+    Route::post('phone-verify-now',[UserController::class,'phoneVerifyNow'])->name('phone.verify.Now');
+
     Route::get('logout', [UserController::class,'logout'])->name('auth.user.logout');
     // after admin login
     Route::get('dashboard',[UserController::class,'dashboard'])->name('auth.user.dashboard');

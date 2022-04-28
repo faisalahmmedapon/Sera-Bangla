@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 use Validator;
 use Str;
 
@@ -45,10 +46,12 @@ class CategoryController extends Controller
             $category->category_name_slug = Str::slug($request->category_name);
 
             if ($request->file('category_logo')) {
-                $brand_logo = $request->file('category_logo');
-                $extension = $brand_logo->getClientOriginalExtension();
+                $category_logo = $request->file('category_logo');
+                $extension = $category_logo->getClientOriginalExtension();
                 $logo_name = "category_logo" . time() . "." . $extension;
-                $brand_logo->move(public_path('/uploads/category/'), $logo_name);
+                Image::make($category_logo)->resize(1000, 600)->save(public_path().'/uploads/category/'.$logo_name);
+
+//                $brand_logo->move(public_path('/uploads/category/'), $logo_name);
                 $category->category_logo = "/uploads/category/" . $logo_name;
             }
 
@@ -85,10 +88,12 @@ class CategoryController extends Controller
                 @unlink($image_path);
             }
 
-            $brand_logo = $request->file('category_logo');
-            $extension = $brand_logo->getClientOriginalExtension();
+            $category_logo = $request->file('category_logo');
+            $extension = $category_logo->getClientOriginalExtension();
             $logo_name = "logo" . time() . "." . $extension;
-            $brand_logo->move(public_path('/uploads/category/'), $logo_name);
+//            $brand_logo->move(public_path('/uploads/category/'), $logo_name);
+            Image::make($category_logo)->resize(1000, 600)->save(public_path().'/uploads/category/'.$logo_name);
+
             $category->category_logo = "/uploads/category/" . $logo_name;
         }
         $category->status = 1;

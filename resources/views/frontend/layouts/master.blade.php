@@ -452,9 +452,9 @@
 </div><!-- mobilemenu / end --><!-- site -->
 
 <div class="site"><!-- mobile site__header -->
-    @include('frontend.partials.header');
+    @include('frontend.partials.header')
     @yield('content')
-    @include('frontend.partials.footer');
+    @include('frontend.partials.footer')
 </div>
 <!-- site / end -->
 

@@ -9,29 +9,24 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-9 offset-lg-3">
+
+
                         <div class="block-slideshow__body">
                             <div class="owl-carousel">
-                                @foreach($slider_products as $slider_product)
-                                    <?php
-                                    $slider_product_images = json_decode($slider_product->product_image);
-                                    $slider_product_images_one = $slider_product_images[0];
-                                    //dd($product_images_one)
-                                    ?>
+                                @foreach($sliders as $slider)
+
                                     <a class="block-slideshow__slide"
-                                       href="{{route('frontend.product.details',$slider_product->product_name_slug)}}">
+                                       href="{{route('frontend.product.details',$slider->title)}}">
                                         <div class="block-slideshow__slide-image block-slideshow__slide-image--desktop"
-                                             style="background-image: url('{{asset($slider_product_images_one)}}')"></div>
+                                             style="background-image: url('{{asset($slider->image)}}')"></div>
                                         <div class="block-slideshow__slide-image block-slideshow__slide-image--mobile"
-                                             style="background-image: url('{{asset($slider_product_images_one)}}')"></div>
+                                             style="background-image: url('{{asset($slider->image)}}')"></div>
                                         <div class="block-slideshow__slide-content">
-                                            <div class="block-slideshow__slide-title">{{$slider_product->product_name}}
+                                            <div class="block-slideshow__slide-title text-white">{{$slider->title}}
                                             </div>
-                                            <div
-                                                class="block-slideshow__slide-text"> {!! Str::limit($slider_product->product_short_description,400) !!}
-                                            </div>
-                                            <div class="block-slideshow__slide-button">
-                                                <span class="btn btn-primary btn-lg">Shop Now</span>
-                                            </div>
+                                            {{--                                            <div class="block-slideshow__slide-button">--}}
+                                            {{--                                                <span class="btn btn-primary btn-lg">Shop Now</span>--}}
+                                            {{--                                            </div>--}}
                                         </div>
                                     </a>
                                 @endforeach
@@ -104,7 +99,7 @@
             </div>
             <div class="row">
                 @foreach($products as $product)
-                    <div class="col-md-4">
+                    <div class="col-md-4 py-2">
 
 
                         <?php
@@ -122,193 +117,48 @@
                             <div class="product-card__badges-list">
                                 <div class="product-card__badge product-card__badge--new">New</div>
                             </div>
-                            <div class="product-card__image"><a
+                            <div class="product-card__image "><a
                                     href="{{route('frontend.product.details',$product->product_name_slug)}}"><img
-                                        src="{{asset($product_images_one)}}" alt=""></a></div>
-                            <div class="product-card__info">
-                                <div class="product-card__name"><a
-                                        href="{{route('frontend.product.details',$product->product_name_slug)}}"> {{Str::limit($product->product_name,70)}}</a>
-                                </div>
-                                <div class="product-card__rating">
-                                    <div class="rating">
-                                        <div class="rating__body">
-                                            <svg class="rating__star rating__star--active" width="13px"
-                                                 height="12px">
-                                                <g class="rating__fill">
-                                                    <use
-                                                        xlink:href="{{asset('frontend')}}/images//sprite.svg#star-normal"></use>
-                                                </g>
-                                                <g class="rating__stroke">
-                                                    <use
-                                                        xlink:href="{{asset('frontend')}}/images/sprite.svg#star-normal-stroke"></use>
-                                                </g>
-                                            </svg>
-                                            <div
-                                                class="rating__star rating__star--only-edge rating__star--active">
-                                                <div class="rating__fill">
-                                                    <div class="fake-svg-icon"></div>
-                                                </div>
-                                                <div class="rating__stroke">
-                                                    <div class="fake-svg-icon"></div>
-                                                </div>
-                                            </div>
-                                            <svg class="rating__star rating__star--active" width="13px"
-                                                 height="12px">
-                                                <g class="rating__fill">
-                                                    <use
-                                                        xlink:href="{{asset('frontend')}}/images/sprite.svg#star-normal"></use>
-                                                </g>
-                                                <g class="rating__stroke">
-                                                    <use
-                                                        xlink:href="{{asset('frontend')}}/images/sprite.svg#star-normal-stroke"></use>
-                                                </g>
-                                            </svg>
-                                            <div
-                                                class="rating__star rating__star--only-edge rating__star--active">
-                                                <div class="rating__fill">
-                                                    <div class="fake-svg-icon"></div>
-                                                </div>
-                                                <div class="rating__stroke">
-                                                    <div class="fake-svg-icon"></div>
-                                                </div>
-                                            </div>
-                                            <svg class="rating__star rating__star--active" width="13px"
-                                                 height="12px">
-                                                <g class="rating__fill">
-                                                    <use
-                                                        xlink:href="{{asset('frontend')}}/images/sprite.svg#star-normal"></use>
-                                                </g>
-                                                <g class="rating__stroke">
-                                                    <use
-                                                        xlink:href="{{asset('frontend')}}/images/sprite.svg#star-normal-stroke"></use>
-                                                </g>
-                                            </svg>
-                                            <div
-                                                class="rating__star rating__star--only-edge rating__star--active">
-                                                <div class="rating__fill">
-                                                    <div class="fake-svg-icon"></div>
-                                                </div>
-                                                <div class="rating__stroke">
-                                                    <div class="fake-svg-icon"></div>
-                                                </div>
-                                            </div>
-                                            <svg class="rating__star rating__star--active" width="13px"
-                                                 height="12px">
-                                                <g class="rating__fill">
-                                                    <use
-                                                        xlink:href="{{asset('frontend')}}/images/sprite.svg#star-normal"></use>
-                                                </g>
-                                                <g class="rating__stroke">
-                                                    <use
-                                                        xlink:href="{{asset('frontend')}}/images/sprite.svg#star-normal-stroke"></use>
-                                                </g>
-                                            </svg>
-                                            <div
-                                                class="rating__star rating__star--only-edge rating__star--active">
-                                                <div class="rating__fill">
-                                                    <div class="fake-svg-icon"></div>
-                                                </div>
-                                                <div class="rating__stroke">
-                                                    <div class="fake-svg-icon"></div>
-                                                </div>
-                                            </div>
-                                            <svg class="rating__star" width="13px" height="12px">
-                                                <g class="rating__fill">
-                                                    <use
-                                                        xlink:href="{{asset('frontend')}}/images/sprite.svg#star-normal"></use>
-                                                </g>
-                                                <g class="rating__stroke">
-                                                    <use
-                                                        xlink:href="{{asset('frontend')}}/images/sprite.svg#star-normal-stroke"></use>
-                                                </g>
-                                            </svg>
-                                            <div class="rating__star rating__star--only-edge">
-                                                <div class="rating__fill">
-                                                    <div class="fake-svg-icon"></div>
-                                                </div>
-                                                <div class="rating__stroke">
-                                                    <div class="fake-svg-icon"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-card__rating-legend">9 Reviews</div>
-                                </div>
+                                        src="{{asset($product_images_one)}}" alt=""></a>
                             </div>
                             <div class="product-card__actions">
                                 <div class="product-card__availability">Availability: <span
                                         class="text-success">In Stock</span></div>
                                 <div class="product-card__prices">
-                                    ${{$product->product_discount_price}}
-                                    @if($product->product_discount_type == 1)
-                                        <del> ${{$product->product_discount}} </del>
-                                    @else
-                                        <del> {{$product->product_discount}}%</del>
-                                    @endif
+                                    Price:    <del>৳ {{$product->product_selling_price}} </del>
                                 </div>
                                 <div class="product-card__prices">
-                                    <del>${{$product->product_selling_price}} </del>
-
+                                  Buy Now :  ৳ {{$product->product_discount_price}}
+                                    <sup>@if($product->product_discount_type == 1)
+                                            <del> ৳ {{$product->product_discount}} </del>
+                                        @else
+                                            <del> {{$product->product_discount}}%</del>
+                                        @endif
+                                    </sup>
                                 </div>
                                 <div class="product-card__buttons">
                                     @if (Session::has('user_id'))
-
-                                        <?php
-
-                                        if (Session::get('user_id')) {
-                                            $id = Session::get('user_id');
-
-                                            $auth_user = \App\Models\User::where('id', $id)->first();
-                                        }
-
-                                        ?>
-                                        @if($auth_user->email_verified_at == null)
-                                            <a href="{{route('auth.user.email.verify')}}" class="btn btn-primary btn-lg"> Add to Cart </a>
-
-                                        @else
-                                            <form action="{{ route('cart.store') }}" method="POST"
-                                                  enctype="multipart/form-data">
-                                                @csrf
-                                                <input type="hidden" value="{{ $product->id }}" name="id">
-                                                <input type="hidden" value="{{ $product->product_name }}" name="name">
-                                                <input type="hidden" value="{{ $product->product_discount_price }}"
-                                                       name="price">
-                                                <input type="hidden" value="{{ $product->product_image }}" name="image">
-                                                <input type="hidden" value="1" name="quantity">
-                                                <button class="btn btn-primary btn-lg">Add To Cart</button>
-                                            </form>
-                                        @endif
-
-
-
+                                        <form action="{{ route('cart.store') }}" method="POST"
+                                              enctype="multipart/form-data">
+                                            @csrf
+                                            <input type="hidden" value="{{ $product->id }}" name="id">
+                                            <input type="hidden" value="{{ $product->product_name }}" name="name">
+                                            <input type="hidden" value="{{ $product->product_discount_price }}"
+                                                   name="price">
+                                            <input type="hidden" value="{{ $product->product_image }}" name="image">
+                                            <input type="hidden" value="1" name="quantity">
+                                            <button class="btn btn-primary btn-sm">Add To Bag</button>
+                                        </form>
                                         {{--                                        <a href="{{route('auth.user.login')}}" class="btn btn-danger btn-lg">Add to cart</a>--}}
                                     @else
                                         <a href="{{route('auth.user.login')}}" class="btn btn-primary btn-lg">Add to
-                                            cart</a>
+                                            Bag</a>
                                     @endif
 
 
                                     <button
-                                        class="btn btn-secondary product-card__addtocart product-card__addtocart--list"
-                                        type="button">Add To Cart
-                                    </button>
-                                    <button
-                                        class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"
-                                        type="button">
-                                        <svg width="16px" height="16px">
-                                            <use
-                                                xlink:href="{{asset('frontend')}}/images//sprite.svg#wishlist-16"></use>
-                                        </svg>
-                                        <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                    </button>
-                                    <button
-                                        class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare"
-                                        type="button">
-                                        <svg width="16px" height="16px">
-                                            <use
-                                                xlink:href="{{asset('frontend')}}/images//sprite.svg#compare-16"></use>
-                                        </svg>
-                                        <span class="fake-svg-icon fake-svg-icon--compare-16"></span>
+                                        class=" btn btn-secondary product-card__addtocart product-card__addtocart--list"
+                                        type="button">Add To Bag
                                     </button>
                                 </div>
                             </div>

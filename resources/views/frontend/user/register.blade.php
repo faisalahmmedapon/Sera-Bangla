@@ -18,10 +18,19 @@
                             </div>
                             <div class="form-group">
                                 <label>Email address</label>
-                                <input name="email" type="email" value="{{old('email')}}"  class="form-control" placeholder="Enter email">
+                                <input name="email" type="email" value="{{old('email')}}"  class="form-control" placeholder="Enter Email">
                                 <div style='color:red; padding: 0 5px;'>{{($errors->has('email'))?($errors->first('email')):''}}</div>
-
                             </div>
+
+
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input name="phone" type="number" value="+88{{old('phone')}}"  class="form-control" placeholder="Enter Phone Number ">
+                                <div style='color:red; padding: 0 5px;'>{{($errors->has('phone'))?($errors->first('phone')):''}}</div>
+                            </div>
+
+
+
                             <div class="form-group"><label>Password</label>
                                 <input name="password" type="password" value="{{old('password')}}" class="form-control" placeholder="Password">
                                 <div style='color:red; padding: 0 5px;'>{{($errors->has('password'))?($errors->first('password')):''}}</div>

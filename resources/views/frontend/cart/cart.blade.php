@@ -43,7 +43,7 @@
 {{--                                        </ul>--}}
                                     </td>
                                     <td class="cart-table__column cart-table__column--price" data-title="Price">
-                                        Tk {{$item->price}} </td>
+                                        ৳ {{$item->price}} </td>
                                     <td class="cart-table__column cart-table__column--quantity" data-title="Quantity">
                                         <div class="input-number">
 
@@ -68,7 +68,7 @@
                                         </div>
                                     </td>
                                     <td class="cart-table__column cart-table__column--total" data-title="Total">
-                                        Tk {{$item->price*$item->quantity}}</td>
+                                        ৳ {{$item->price*$item->quantity}}</td>
                                     <td class="cart-table__column cart-table__column--remove">
                                         {{--                            <button type="button" class="btn btn-light btn-sm btn-svg-icon">--}}
                                         {{--                                <svg width="12px" height="12px">--}}
@@ -105,24 +105,24 @@
                                             <thead class="cart__totals-header">
                                             <tr>
                                                 <th>Subtotal</th>
-                                                <td>Tk {{\Cart::getSubTotal('0')}}</td>
+                                                <td>৳ {{\Cart::getSubTotal('0')}}</td>
                                             </tr>
                                             </thead>
                                             <tbody class="cart__totals-body">
                                             <tr>
                                                 <th>Shipping</th>
-                                                <td> Tk 25x{{ $item->quantity }} = Tk {{ $item->quantity*25 }}
+                                                <td> ৳ 25x{{ $item->quantity }} = ৳ {{ $item->quantity*25 }}
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <th>Tax</th>
-                                                <td>Tk 0.00</td>
+                                                <td>৳ 0.00</td>
                                             </tr>
                                             </tbody>
                                             <tfoot class="cart__totals-footer">
                                             <tr>
                                                 <th>Pay</th>
-                                                <td>Tk {{\Cart::getSubTotal('0')+$item->quantity*25}}</td>
+                                                <td>৳ {{\Cart::getSubTotal('0')+$item->quantity*25}}</td>
                                             </tr>
                                             </tfoot>
                                         </table>

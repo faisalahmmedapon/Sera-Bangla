@@ -6,18 +6,19 @@
 @endsection
 
 @section('content')
+
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6 col-md-12 col-lg-12 d-flex justify-content-between">
-                    <a class=" btn shadow "> <i class="fa fa-list"> Product List </i>  </a>
-                    <a href="{{route('product.create')}}" class="btn shadow"> <i class="fa fa-plus"> New Product </i> </a>
+                <div class="col-sm-6 col-md-12 col-lg-12 d-flex justify-content-end">
+                    <a href="{{route('product.create')}}" class="btn btn-success"> <i class="fa fa-plus"> New Product </i> </a>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+
 
     <!-- Main content -->
     <section class="content">

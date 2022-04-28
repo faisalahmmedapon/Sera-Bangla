@@ -6,13 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 use DB;
 class FrontendController extends Controller
 {
     public function index(){
-        $data['products'] = Product::where('status',1)->get();
-        $data['slider_products'] = Product::where('status',1)->limit(4)->get();
+        $data['products'] = Product::where('status',1)->latest()->limit(15)->get();
+        $data['sliders'] = Slider::where('status',1)->limit(10)->get();
         $data['categories'] = Category::where('status', 1)->get();
         return view('frontend.home',$data);
     }
@@ -47,7 +48,7 @@ class FrontendController extends Controller
 
         $data['product_brand'] = Brand::where('id',$data['product']->product_brand_id)->first();
 
-        $data['brand_products'] = Product::where('product_brand_id',$data['product_brand']->id)->get();
+        $data['brand_products'] = Product::where('product_brand_id',$data['product_brand']->id)->latest()->paginate(12);
         $data['product_images'] =  json_decode( $data['product']->product_image);
 
         return view('frontend.details',$data);
@@ -62,8 +63,7 @@ class FrontendController extends Controller
             ->where('product_category_id',$data['category']->id)
             ->join('products','products.id','product_categories.product_id')
             ->select('products.*')
-            ->get();
-
+            ->orderBy('id','desc')->paginate(1);
 
 
         return view('frontend.category_product',$data);

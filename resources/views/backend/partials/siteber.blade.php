@@ -18,6 +18,23 @@
             <li class="nav-item">
                 <a href="#" class="nav-link">
                     <p>
+                        Slider Management <i class="fa fa-caret-down right" aria-hidden="true"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="{{route('slider.index')}}" class="nav-link">
+                            Sliders <i class="fa fa-angle-double-right right" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <p>
                         Users Management <i class="fa fa-caret-down right" aria-hidden="true"></i>
                     </p>
                 </a>

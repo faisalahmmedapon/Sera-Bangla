@@ -29,8 +29,8 @@
                              <div class="form-group"><label> Gender </label>
 
                                  <select class="form-control" name="gender">
-                                     <option @if($auth_user->gender == 'Female') selected @endif value="Female">Female</option>
                                      <option @if($auth_user->gender == 'Male') selected @endif value="Male">Male</option>
+                                     <option @if($auth_user->gender == 'Female') selected @endif value="Female">Female</option>
                                      <option @if($auth_user->gender == 'Other') selected @endif value="Other">Other</option>
                                  </select>
                                 <div style='color:red; padding: 0 5px;'>{{($errors->has('gender'))?($errors->first('gender')):''}}</div>

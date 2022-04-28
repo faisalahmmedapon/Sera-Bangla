@@ -25,7 +25,7 @@
                        <td> {{$key+1}} </td>
                        <td> {{Str::limit($order->product_name,100)}} </td>
                        <td> {{$order->product_quantity}} </td>
-                       <td> Tk {{$order->product_total_price}} </td>
+                       <td> ৳ {{$order->product_total_price}} </td>
                        <td> {{$order->status}} </td>
 {{--                       <td> {{Carbon\Carbon::createFromFormat('m/d/Y', $order->created_at)->diffForHumans()}}</td>--}}
 

@@ -231,7 +231,9 @@
                         </tr>
                         <tr>
                             <th>Payment Method</th>
-                            <td>  <button class="btn-success">{{$product_shipping_address->payment_method}}</button>  </td>
+                            <td>
+                                <button class="btn-success">{{$product_shipping_address->payment_method}}</button>
+                            </td>
                         </tr>
 
                         <tr>
@@ -309,9 +311,53 @@
                             <th> Name</th>
                             <td width="80%"> {{$user->name}} </td>
                         </tr>
+
                         <tr>
-                            <th> Email</th>
-                            <td> {{$user->email}} </td>
+                            <td>Email:</td>
+                            <td>{{$user->email}}
+                                @if($user->email_verified_at != null)
+                                    <p class=" bg-success text-white p-1"> Email Verified</p>
+                                @else
+                                    <p class=" bg-danger text-white p-1"> Email Not Verified</p>
+                                @endif
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Phone:</td>
+                            <td>{{$user->phone}}
+                                @if($user->phone_verified_at != null)
+                                    <p class=" bg-success text-white p-1"> Phone Verified</p>
+                                @else
+                                    <p class=" bg-danger text-white p-1"> Phone Not Verified</p>
+                                @endif
+
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Gender:</td>
+                            <td>{{$user->gender}}</td>
+                        </tr>
+
+                        <tr>
+                            <td>Address:</td>
+                            <td>{{$user->address}}</td>
+                        </tr>
+
+
+                        <tr>
+                            <td>Image:</td>
+                            <td><img height="100px" width="200px" src="{{$user->image}}"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Profile Status :</td>
+                            <td>@if($user->status == '1') <a class=" bg-success text-white p-1">Active</a> @else
+                                    <a class="bg-danger text-white p-1">Inactive</a>                         <p> Your
+                                        account has been disabled . Please Contact in support team.</p>
+                                @endif
+                            </td>
                         </tr>
 
                         </tbody>

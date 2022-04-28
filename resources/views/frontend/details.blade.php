@@ -4,7 +4,7 @@
 @section('content')
 
 
-    <div class="container">
+    <div class="container py-5">
         <div class="product product--layout--standard" data-layout="standard">
             <div class="product__content"><!-- .product__gallery -->
                 <div class="product__gallery">
@@ -164,9 +164,20 @@
                 <div class="product__sidebar">
                     <div class="product__availability">Availability: <span class="text-success">In Stock</span>
                     </div>
-                    <div class="product__prices">${{$product->product_discount_price}}
-                        <del> ${{$product->product_selling_price}} </del>
-                    </div><!-- .product__options -->
+
+                    <div class="product-product__prices  py-3">
+                        Price:    <del>৳ {{$product->product_selling_price}} </del>
+                    </div>
+                    <div class="product-product__prices">
+                        Buy Now :  ৳ {{$product->product_discount_price}}
+                        <sup>@if($product->product_discount_type == 1)
+                                <del> ৳ {{$product->product_discount}} </del>
+                            @else
+                                <del> {{$product->product_discount}}%</del>
+                            @endif
+                        </sup>
+                    </div>
+
                 </div>
                 <div class="product-card__buttons">
                     @if (Session::has('user_id'))
@@ -179,17 +190,17 @@
                             <input type="hidden" value="{{ $product->product_discount_price }}" name="price">
                             <input type="hidden" value="{{ $product->product_image }}" name="image">
                             <input type="hidden" value="1" name="quantity">
-                            <button class="btn btn-primary btn-lg">Add To Cart</button>
+                            <button class="btn btn-primary btn-sm">Add To Bag</button>
                         </form>
 
                     @else
-                        <a href="{{route('auth.user.login')}}" class="btn btn-primary btn-lg">Add to cart</a>
+                        <a href="{{route('auth.user.login')}}" class="btn btn-primary btn-sm">Add to Bag</a>
                     @endif
 
 
                     <button
                         class="btn btn-secondary product-card__addtocart product-card__addtocart--list"
-                        type="button">Add To Cart
+                        type="button">Add To Bag
                     </button>
                     <button
                         class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"
@@ -662,7 +673,7 @@
         </div>
 
 
-        <div class="container">
+        <div class="container py-4">
             <div class="row">
                 <div class="col-md-12">
                     <h3> May You Like </h3>
@@ -671,7 +682,6 @@
             <div class="row">
                 @foreach($brand_products as $brand_product)
                     <div class="col-md-4">
-
 
                         <?php
                         $product_images = json_decode($product->product_image);
@@ -804,18 +814,23 @@
                             <div class="product-card__actions">
                                 <div class="product-card__availability">Availability: <span
                                         class="text-success">In Stock</span></div>
-                                <div class="product-card__prices">
-                                    ${{$brand_product->product_discount_price}}
-                                    @if($brand_product->product_discount_type == 1)
-                                        <del> ${{$brand_product->product_discount}} </del>
-                                    @else
-                                        <del> {{$brand_product->product_discount}}%</del>
-                                    @endif
-                                </div>
-                                <div class="product-card__prices">
-                                    <del>${{$brand_product->product_selling_price}} </del>
 
+                                <div class="product-card__prices ">
+                                    Price:    <del>৳ {{$brand_product->product_selling_price}} </del>
                                 </div>
+                                <div class="product-card__prices">
+                                    Buy Now :  ৳ {{$brand_product->product_discount_price}}
+                                    <sup>@if($brand_product->product_discount_type == 1)
+                                            <del> ৳ {{$brand_product->product_discount}} </del>
+                                        @else
+                                            <del> {{$brand_product->product_discount}}%</del>
+                                        @endif
+                                    </sup>
+                                </div>
+
+
+
+
                                 <div class="product-card__buttons">
 
 
@@ -830,42 +845,26 @@
                                             <input type="hidden" value="{{ $brand_product->product_image }}"
                                                    name="image">
                                             <input type="hidden" value="1" name="quantity">
-                                            <button class="btn btn-primary btn-lg">Add To Cart</button>
+                                            <button class="btn btn-primary btn-sm">Add To Bag</button>
                                         </form>
                                     @else
-                                        <a href="{{route('auth.user.login')}}" class="btn btn-primary btn-lg">Add to
-                                            cart</a>
+                                        <a href="{{route('auth.user.login')}}" class="btn btn-primary btn-sm">Add to
+                                            Bag</a>
                                     @endif
 
 
                                     <button
                                         class="btn btn-secondary product-card__addtocart product-card__addtocart--list"
-                                        type="button">Add To Cart
+                                        type="button">Add To Bag
                                     </button>
-                                    <button
-                                        class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__wishlist"
-                                        type="button">
-                                        <svg width="16px" height="16px">
-                                            <use
-                                                xlink:href="{{asset('frontend')}}/images//sprite.svg#wishlist-16"></use>
-                                        </svg>
-                                        <span class="fake-svg-icon fake-svg-icon--wishlist-16"></span>
-                                    </button>
-                                    <button
-                                        class="btn btn-light btn-svg-icon btn-svg-icon--fake-svg product-card__compare"
-                                        type="button">
-                                        <svg width="16px" height="16px">
-                                            <use
-                                                xlink:href="{{asset('frontend')}}/images//sprite.svg#compare-16"></use>
-                                        </svg>
-                                        <span class="fake-svg-icon fake-svg-icon--compare-16"></span>
-                                    </button>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </div>
+            <p class="text-center p-2">{{$brand_products->links()}}</p>
         </div>
 
 
