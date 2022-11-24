@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('category_name');
             $table->string('category_name_slug');
             $table->string('category_logo')->nullable();
-            $table->string('status');
+            $table->string('status')->default(1);
             $table->timestamps();
         });
     }
